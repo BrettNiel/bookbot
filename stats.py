@@ -8,7 +8,6 @@ def num_of_words(text):
     return count
 
 def count_of_each_character(text):
-
     new_dict = {}
 
     for character in text:
@@ -19,3 +18,20 @@ def count_of_each_character(text):
             new_dict[character] = 1
     
     return new_dict
+
+def sort_on(dict):
+    return dict["num"]
+
+def sorted_dict(dict):
+    dict_list = []
+
+    for item in dict:
+        new_dict = {}
+        num = dict[item]
+
+        new_dict.update({"char": item, "num": num})
+        dict_list.append(new_dict)
+    
+    dict_list.sort(reverse=True, key=sort_on)
+    
+    return dict_list
